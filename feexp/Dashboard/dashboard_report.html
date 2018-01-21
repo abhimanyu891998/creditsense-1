@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard page</title>
+  
+  
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+       <link rel="stylesheet" href="form.css">
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  
+  
+  
+</head>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCui-0CjmxQp0A3zPzfPiMs1MkkD3aBvOg",
+    authDomain: "test-8b2b3.firebaseapp.com",
+    databaseURL: "https://test-8b2b3.firebaseio.com",
+    projectId: "test-8b2b3",
+    storageBucket: "test-8b2b3.appspot.com",
+    messagingSenderId: "83933887307"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<body>
+
+  
+<nav>
+  <header><span style="color:#E91E63">CREDIT</span><span style = "color:#FFFFFF">SENSE</span></header>
+  <section>
+    <header>PORTAL</header>
+    <ul>
+      <li><a class="sidebarlinks" href="dashboard_index.html">Dashboard</a></li>
+      <li><a class="sidebarlinks" href="dashboard_generate_report.html">Generate Report</a></li>
+      <li><a class="sidebarlinks" href="detail_form.html">Upload Docs</a></li>
+    </ul>
+  </section>
+  
+</nav>
+<article>
+  <header>
+    <div class="title">Dashboard</div>
+ 
+    <div class="interval">
+    </div>
+  </header>
+<div id="cs" style="text-align:center; font-size: 80px ; font-family: serif ; margin-top: 30px ; color:#FFFFFF" >Calculating credit score...</div>
+<div id="stype" style="text-align:center; font-size: 40px ; font-family: serif ; margin-top: -10px ; color:#FFFFFF" >Score Type</div>
+<iframe width="1300" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiYWYwMDQ2ODUtNjEwMy00NTc1LWE1YmMtOWQ0MDJjMzg5Nzc4IiwidCI6Ijg0YzMxY2EwLWFjM2ItNGVhZS1hZDExLTUxOWQ4MDIzM2U2ZiIsImMiOjZ9" frameborder="0" allowFullScreen="true" style="margin-top: 100px"></iframe>
+
+
+ 
+  
+  
+</article>
+  
+
+  
+
+   
+
+
+
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type = "text/javascript">
+  $("document").ready(function()
+  {   
+    var cscore = firebase.database().ref('Credit/');
+    cscore.on('child_added',function(data){
+      var html = data.val().cs;
+      console.log(html);
+      $("#cs").html(html);
+      if(html>=0 && html<=4)
+      {
+          $("#stype").html("Bad")
+
+$('#stype').css({
+  'text-align': 'center',
+  'font-size': '80px',
+  'height': '50px',
+  'font-family': 'serif',
+  'color':'#F44336'
+
+});
+      }
+      else if(html>=4 && html<=6)
+      {
+        $("#stype").html("Average");
+        $('#stype').css({
+  'text-align': 'center',
+  'font-size': '80px',
+  'height': '50px',
+  'font-family': 'serif',
+  'color':'#2196F3'
+
+});
+      }
+      else
+      { console.log("LOL");
+        $("#stype").html("Good");
+       
+        $('#stype').css({
+  'text-align': 'center',
+  'font-size': '80px',
+  'height': '50px',
+  'font-family': 'serif',
+  'color':'#4CAF50'
+      }); 
+
+      }
+
+    });
+
+  });
+</script>
+
+</html>

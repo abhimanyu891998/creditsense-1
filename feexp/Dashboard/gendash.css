@@ -1,0 +1,16 @@
+#hkid_val{
+ display: inline-block;
+ float: left;
+ position: relative;
+ left: 200px;
+ color: blue;
+ width: 300px;
+
+}
+
+#submit{
+display: inline-block;
+position: relative;
+left: 230px;
+height: 25px;
+}

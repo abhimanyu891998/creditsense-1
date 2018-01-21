@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard page</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<nav>
+  <header><span style="color:#E91E63">CREDIT</span><span style = "color:#FFFFFF">SENSE</span></header>
+  <section>
+    <header>PORTAL</header>
+    <ul>
+      <li><a class="sidebarlinks" href="dashboard_index.html">Dashboard</a></li>
+      <li><a class="sidebarlinks" href="dashboard_generate_report.html">Generate Report</a></li>
+      <li><a class="sidebarlinks" href="detail_form.html">Upload Docs</a></li>
+    </ul>
+  </section>
+  
+</nav>
+<article>
+  <header>
+    <div class="title">Dashboard</div>
+   
+    <div class="interval">
+    </div>
+  </header>
+  <section>
+    <div class="chart">
+      <canvas id="c1" width="900" height="200"></canvas>
+    </div>
+  </section>
+  <section>
+    <header>Dashboard Summary</header>
+    <div class="inlineChart">
+      <canvas id="c2" width="100" height="100"></canvas>
+      <div class="info">
+        <div class="value">36,146</div>
+        <div class="title">Credit Reports</div>
+      </div>
+    </div>
+    <div class="inlineChart">
+      <canvas id="c3" width="100" height="100"></canvas>
+      <div class="info">
+        <div class="value">24,734</div>
+        <div class="title">Consumers</div>
+      </div>
+    </div>
+    <div class="inlineChart">
+      <canvas id="c4" width="100" height="100"></canvas>
+      <div class="info">
+        <div class="value">15,650</div>
+        <div class="title">Loans Granted</div>
+      </div>
+    </div>
+  </section>
+  <section>
+
+  </section>
+</article>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
